@@ -1,0 +1,26 @@
+---
+# tasks file for ansible-role-etckeeper
+
+- name: install
+  yum:
+    name:  etckeeper
+    state: installed
+    enablerepo: epel
+  tags: [etckeeper]
+
+- name: init
+  shell: >
+    etckeeper init
+    chdir=/etc
+    creates=/etc/.etckeeper
+  register: is_init
+  tags: [etckeeper]
+
+- name: init commit
+  shell: >
+    etckeeper vcs commit -m "init"
+    chdir=/etc
+  when: is_init.changed
+  changed_when: false
+  tags: [etckeeper]
+
