@@ -17,6 +17,11 @@ RUN yum -y install epel-release
 RUN yum -y install git ansible sudo
 RUN yum clean all
 
+# for etckeeper. git config
+RUN git config --global user.name  "rooooot"
+RUN git config --global user.email "rooooot@localhost"
+
+
 # Disable requiretty
 RUN sed -i -e 's/^\(Defaults\s*requiretty\)/#--- \1/'  /etc/sudoers
 
