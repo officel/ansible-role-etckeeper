@@ -11,6 +11,13 @@ Requirements
 
 use epel repository.
 
+maybe require git config user.name & email on CentOS 7.
+see test/Dockerfile.centos-7.
+
+    git config --global user.name  "rooooot"
+    git config --global user.email "rooooot@localhost"
+
+
 Role Variables
 --------------
 
