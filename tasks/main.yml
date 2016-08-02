@@ -18,7 +18,7 @@
 
 - name: init commit
   shell: >
-    etckeeper vcs commit -m "init"
+    etckeeper commit "init"
     chdir=/etc
   when: is_init.changed
   changed_when: false
