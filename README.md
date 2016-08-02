@@ -9,7 +9,7 @@ Install & init etckeeper.
 Requirements
 ------------
 
-none.
+use epel repository.
 
 Role Variables
 --------------
